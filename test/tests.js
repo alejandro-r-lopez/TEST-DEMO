@@ -9,6 +9,8 @@ import {
     makeLuckyGreeting,
     getSecondItem,
     getLastItem,
+    renderDogLI,
+    renderDogDiv,
 } from '../functions.js';
 
 const { test } = QUnit;
@@ -73,7 +75,7 @@ test('this should multiply by 12 then divide by 2', (expect) => {
     expect.equal(actual3, expected3, '60 = 60');
 });
 
-test('this should divide firstNumber by secondNumber the multiply by thirdNumber', (expect) => {
+test('this should divide firstNumber by secondNumber then multiply by thirdNumber', (expect) => {
     const expected = 18;
 
     const actual = divideThenMultiply(12, 2, 3);
@@ -112,27 +114,27 @@ test('this should return an array', (expect) => {
     expect.deepEqual(actual3, expected3, '420, 1998, 24 = [420, 1998, 24]]');
 });
 
-test('this should taken in numbers and return a string', (expect) => {
+test('this should take in numbers and return a string', (expect) => {
     const expected = '123';
 
     const actual = returnAsAString(1, 2, 3);
 
-    expect.deepEqual(actual, expected, '123 = 123');
+    expect.deepEqual(actual, expected, '1 2 3 = 123');
 
     const expected2 = '888';
 
     const actual2 = returnAsAString(8, 8, 8);
 
-    expect.deepEqual(actual2, expected2, '888 = 888');
+    expect.deepEqual(actual2, expected2, '8 8 8 = 888');
 
     const expected3 = '954';
 
     const actual3 = returnAsAString(9, 5, 4);
 
-    expect.deepEqual(actual3, expected3, '954 = 954');
+    expect.deepEqual(actual3, expected3, '9 5 4 = 954');
 });
 
-test('this should taken in 2 numbers, add them, and display in greeting', (expect) => {
+test('this should take in 2 numbers, add them, and display in greeting', (expect) => {
     const expected = 'Hello! Your lucky number for the day is 12';
 
     const actual = makeLuckyGreeting(6, 6);
@@ -152,42 +154,82 @@ test('this should taken in 2 numbers, add them, and display in greeting', (expec
     expect.deepEqual(actual3, expected3, 'Hello! Your lucky number for the day is 9');
 });
 
-test('this should taken an array and return the second item', (expect) => {
+test('this should take in an array and return the second item', (expect) => {
     const expected = 2;
 
     const actual = getSecondItem([1, 2, 3]);
 
-    expect.deepEqual(actual, expected, '2 = 2');
+    expect.deepEqual(actual, expected, '2');
 
     const expected2 = 'banana';
 
     const actual2 = getSecondItem(['apple', 'banana', 'orange']);
 
-    expect.deepEqual(actual2, expected2, 'banana = banana');
+    expect.deepEqual(actual2, expected2, 'banana');
 
     const expected3 = 8;
 
     const actual3 = getSecondItem([11, 8, 3]);
 
-    expect.deepEqual(actual3, expected3, '8 = 8');
+    expect.deepEqual(actual3, expected3, '8');
 });
 
-test('this should taken an array and return the last item', (expect) => {
+test('this should take in an array and return the last item', (expect) => {
     const expected = 'orange';
 
     const actual = getLastItem(['apple', 'banana', 'orange']);
 
-    expect.deepEqual(actual, expected, 'orange = orange');
+    expect.deepEqual(actual, expected, 'orange');
 
     const expected2 = 16;
 
     const actual2 = getLastItem([4, 16]);
 
-    expect.deepEqual(actual2, expected2, '9 = 9');
+    expect.deepEqual(actual2, expected2, '9');
 
     const expected3 = 'word';
 
     const actual3 = getLastItem(['this', 'word', 'that', 'word']);
 
-    expect.deepEqual(actual3, expected3, 'word=word');
+    expect.deepEqual(actual3, expected3, 'word');
+});
+
+test('this should take in a dog object and return an <li> with name of dog', (expect) => {
+    const expected = '<li>Benny</li>';
+
+    const actual = renderDogLI({ name: 'Benny', age: 6 });
+
+    expect.deepEqual(actual, expected, '<li>Benny</li>');
+
+    const expected2 = '<li>Rocky</li>';
+
+    const actual2 = renderDogLI({ name: 'Rocky', age: 12 });
+
+    expect.deepEqual(actual2, expected2, '<li>Benny</li>');
+
+    const expected3 = '<li>Max</li>';
+
+    const actual3 = renderDogLI({ name: 'Max', age: 2 });
+
+    expect.deepEqual(actual3, expected3, '<li>Benny</li>');
+});
+
+test('this should take in a dog object and its info <li> with name of dog', (expect) => {
+    const expected = '<div><h1>Benny</h1><p>Benny is 6 years old</p></div>';
+
+    const actual = renderDogDiv({ name: 'Benny', age: 6 });
+
+    expect.deepEqual(actual, expected, '<div><h1>Benny</h1><p>Benny is 6 years old</p></div>');
+
+    const expected2 = '<div><h1>Rocky</h1><p>Rocky is 12 years old</p></div>';
+
+    const actual2 = renderDogDiv({ name: 'Rocky', age: 12 });
+
+    expect.deepEqual(actual2, expected2, '<div><h1>Rocky</h1><p>Rocky is 12 years old</p></div>');
+
+    const expected3 = '<div><h1>Max</h1><p>Max is 2 years old</p></div>';
+
+    const actual3 = renderDogDiv({ name: 'Max', age: 2 });
+
+    expect.deepEqual(actual3, expected3, '<div><h1>Max</h1><p>Max is 2 years old</p></div>');
 });

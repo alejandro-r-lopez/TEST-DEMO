@@ -16,15 +16,13 @@ export function multiplyBySeven(num) {
 // This function should take in a number and multiply it by twelve then cut the result in half
 
 export function multiplyBy12ThenHalve(num) {
-    const multiplyTwelve = num * 12;
-    return multiplyTwelve / 2;
+    return (num * 12) / 2;
 }
 
 // This function should take in three numbers, divide the first by the second, then multiply the result by the third
 
 export function divideThenMultiply(firstNumber, secondNumber, thirdNumber) {
-    const divideNumbers = firstNumber / secondNumber;
-    return divideNumbers * thirdNumber;
+    return (firstNumber / secondNumber) * thirdNumber;
 }
 
 // This function should take in three numbers and return those numbers in an array
@@ -42,8 +40,7 @@ export function returnAsAString(firstNumber, secondNumber, thirdNumber) {
 // This function should take in two numbers and return a greeting announcing that the sum of those numbers is today's lucky number
 
 export function makeLuckyGreeting(firstNumber, secondNumber) {
-    const sum = firstNumber + secondNumber;
-    return `Hello! Your lucky number for the day is ${sum}`;
+    return `Hello! Your lucky number for the day is ${firstNumber + secondNumber}`;
 }
 
 // This function should take an array and return the second item in the array
@@ -55,38 +52,17 @@ export function getSecondItem(array) {
 // This function should take an array and return the LAST item in the array, no matter the array's length
 
 export function getLastItem(array) {
-    const lastItem = array.length - 1;
-    return array[lastItem];
+    return array[array.length - 1];
 }
 
 // This function should take a dog object and return an <li> with the name of the dog
-/* 
-Input:
-
-{name: 'Benny', age: 6}
-
-Output: 
-
-<li>Benny</li>
-
-*/
 
 export function renderDogLI(dog) {
-    return true;
+    return `<li>${dog.name}</li>`;
 }
 
 // This function should take a dog object and return a div with the dog's information
-/* 
-Input:
 
-{name: 'Benny', age: 6}
-
-Output: 
-
-<div><h1>Benny</h1><p>Benny is 6 years old</p></div>
-
-*/
-
-export function renderDogDiv() {
-    return true;
+export function renderDogDiv(dog) {
+    return `<div><h1>${dog.name}</h1><p>${dog.name} is ${dog.age} years old</p></div>`;
 }
