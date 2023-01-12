@@ -2,87 +2,37 @@ export function myFunction() {
     return true;
 }
 // This function should take a string and add return an new string that adds three exclamation points to the argument.
-/* 
 
-Input:
-
-'bunny rabbit'
-
-Output: 
-
-'bunny rabbit!!!'
-
-*/
-
-export function addExclamationPoints() {
-    return true;
+export function addExclamationPoints(someString) {
+    return someString + '!!!';
 }
 
 // This function should take in a number and multiply it by seven
 
-/* 
-Input:
-
-4
-
-Output: 
-
-28 
-*/
-
 export function multiplyBySeven(num) {
-    return true;
+    return num * 7;
 }
 
 // This function should take in a number and multiply it by twelve then cut the result in half
 
-/* 
-Input:
-
-4
-
-Output: 
-
-24
-
-*/
-
 export function multiplyBy12ThenHalve(num) {
-    return true;
+    const multiplyTwelve = num * 12;
+    return multiplyTwelve / 2;
 }
 
 // This function should take in three numbers, divide the first by the second, then multiply the result by the third
 
-/* 
-Input:
-
-8, 4, 5
-
-Output: 
-
-10 (because 8 divided by 4 is 2, times 5 is 10)
-*/
-
 export function divideThenMultiply(firstNumber, secondNumber, thirdNumber) {
-    return true;
+    const divideNumbers = firstNumber / secondNumber;
+    return divideNumbers * thirdNumber;
 }
 
 // This function should take in three numbers and return those numbers in an array
 
-/* 
-Input:
-
-8, 4, 5
-
-Output: 
-
-[8, 4, 5]
-*/
-
 export function returnAsAnArray(firstNumber, secondNumber, thirdNumber) {
-    return true;
+    const array = [firstNumber, secondNumber, thirdNumber];
+    return array;
 }
-
 // This function should take in three numbers and return those numbers mushed together as a string
 
 /* 
