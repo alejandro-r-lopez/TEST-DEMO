@@ -5,6 +5,10 @@ import {
     multiplyBy12ThenHalve,
     divideThenMultiply,
     returnAsAnArray,
+    returnAsAString,
+    makeLuckyGreeting,
+    getSecondItem,
+    getLastItem,
 } from '../functions.js';
 
 const { test } = QUnit;
@@ -106,4 +110,84 @@ test('this should return an array', (expect) => {
     const actual3 = returnAsAnArray(420, 1998, 24);
 
     expect.deepEqual(actual3, expected3, '420, 1998, 24 = [420, 1998, 24]]');
+});
+
+test('this should taken in numbers and return a string', (expect) => {
+    const expected = '123';
+
+    const actual = returnAsAString(1, 2, 3);
+
+    expect.deepEqual(actual, expected, '123 = 123');
+
+    const expected2 = '888';
+
+    const actual2 = returnAsAString(8, 8, 8);
+
+    expect.deepEqual(actual2, expected2, '888 = 888');
+
+    const expected3 = '954';
+
+    const actual3 = returnAsAString(9, 5, 4);
+
+    expect.deepEqual(actual3, expected3, '954 = 954');
+});
+
+test('this should taken in 2 numbers, add them, and display in greeting', (expect) => {
+    const expected = 'Hello! Your lucky number for the day is 12';
+
+    const actual = makeLuckyGreeting(6, 6);
+
+    expect.deepEqual(actual, expected, 'Hello! Your lucky number for the day is 12');
+
+    const expected2 = 'Hello! Your lucky number for the day is 44';
+
+    const actual2 = makeLuckyGreeting(10, 34);
+
+    expect.deepEqual(actual2, expected2, 'Hello! Your lucky number for the day is 44');
+
+    const expected3 = 'Hello! Your lucky number for the day is 9';
+
+    const actual3 = makeLuckyGreeting(2, 7);
+
+    expect.deepEqual(actual3, expected3, 'Hello! Your lucky number for the day is 9');
+});
+
+test('this should taken an array and return the second item', (expect) => {
+    const expected = 2;
+
+    const actual = getSecondItem([1, 2, 3]);
+
+    expect.deepEqual(actual, expected, '2 = 2');
+
+    const expected2 = 'banana';
+
+    const actual2 = getSecondItem(['apple', 'banana', 'orange']);
+
+    expect.deepEqual(actual2, expected2, 'banana = banana');
+
+    const expected3 = 8;
+
+    const actual3 = getSecondItem([11, 8, 3]);
+
+    expect.deepEqual(actual3, expected3, '8 = 8');
+});
+
+test('this should taken an array and return the last item', (expect) => {
+    const expected = 'orange';
+
+    const actual = getLastItem(['apple', 'banana', 'orange']);
+
+    expect.deepEqual(actual, expected, 'orange = orange');
+
+    const expected2 = 16;
+
+    const actual2 = getLastItem([4, 16]);
+
+    expect.deepEqual(actual2, expected2, '9 = 9');
+
+    const expected3 = 'word';
+
+    const actual3 = getLastItem(['this', 'word', 'that', 'word']);
+
+    expect.deepEqual(actual3, expected3, 'word=word');
 });
